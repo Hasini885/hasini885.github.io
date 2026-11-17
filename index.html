@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Maram Hasini Sai — GenAI &amp; Backend Engineer</title>
-  <meta name="description" content="Maram Hasini Sai, final-year CSE student at SRM University–AP building Generative AI and agentic AI applications with LLMs, Python and FastAPI." />
+  <title>Maram Hasini Sai — GenAI &amp; Full-Stack Engineer</title>
+  <meta name="description" content="Maram Hasini Sai, final-year CSE student at SRM University–AP building LLM-powered web apps and APIs in Python (FastAPI) and TypeScript (React, Next.js)." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -35,8 +35,8 @@
         <span hidden>🧑🏻‍💻</span>
       </div>
       <p class="intro">
-        Hey there! I'm Hasini, a final-year Computer Science student building
-        Generative AI and agentic AI applications with LLMs, Python and FastAPI.
+        Hey there! I'm Hasini, a final-year Computer Science student who builds
+        LLM-powered web apps and APIs in Python and TypeScript.
       </p>
     </div>
 
@@ -49,8 +49,8 @@
         <li><a href="resume.pdf" target="_blank" rel="noopener">📁 Résumé <span class="ne">↗</span></a></li>
       </ul>
       <ul class="socials">
-        <!-- ✏️ EDIT: replace with your real profile URLs -->
         <li><a href="https://github.com/Hasini885" target="_blank" rel="noopener">GitHub</a></li>
+        <!-- ✏️ EDIT: replace with your real LinkedIn URL -->
         <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="mailto:hasinisaimaram@gmail.com">Email</a></li>
       </ul>
@@ -62,6 +62,7 @@
   <div class="panel">
     <nav class="topbar">
       <a href="#work"><span>📁</span>Work</a>
+      <a href="#skills"><span>🛠️</span>Skills</a>
       <a href="#about"><span>🧑🏻‍💻</span>About Me</a>
       <a href="#contact"><span>💡</span>Contact</a>
     </nav>
@@ -91,7 +92,7 @@
           <a href="#work" class="doodle">projects
             <svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M30 12 C 80 2, 170 4, 192 26 C 205 46, 150 66, 90 64 C 30 62, 4 50, 8 32 C 12 16, 60 8, 120 9" /></svg>
           </a>
-          <a href="#about" class="doodle">about me
+          <a href="#skills" class="doodle">skills
             <svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M40 10 C 100 0, 185 8, 194 30 C 200 52, 140 66, 86 63 C 28 60, 2 46, 10 28 C 18 14, 70 6, 130 10" /></svg>
           </a>
         </div>
@@ -104,40 +105,76 @@
         <h2 class="label reveal"><span>📁</span>Selected Projects</h2>
         <div class="stage reveal" id="stage" tabindex="0" aria-roledescription="carousel" aria-label="Projects. Drag or use arrow keys to rotate.">
           <div class="ring" id="ring">
-            <!-- ✏️ replace each "#" link with the project's GitHub repo -->
             <article class="card">
               <div class="thumb" style="--a:#0f2f2c;--b:#5fc4b8">🛡️</div>
               <div class="card-body">
-                <div class="row"><h3>Sentinel</h3><span class="year">GenAI · Agents</span></div>
-                <p>AI agent governance &amp; ROI platform. Llama 3.3 70B (via Groq) risk-scores agent actions and reasons over policy in real time across 20+ REST endpoints.</p>
-                <ul class="tags"><li>Python</li><li>FastAPI</li><li>Groq · Llama 3.3</li><li>PostgreSQL</li><li>Redis Streams</li><li>Docker</li></ul>
-                <div class="links"><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+                <div class="row"><h3>Sentinel</h3><span class="year">Gen AI · Agents</span></div>
+                <p>Risk-scores every AI-agent tool call <em>before</em> it runs with Llama 3.3 70B (JSON mode, Pydantic-validated). A policy engine then executes, blocks or holds it for human approval.</p>
+                <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Groq</li><li>Next.js</li><li>DeepEval</li></ul>
+                <div class="links"><a href="https://github.com/Hasini885/Sentinel" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
             </article>
             <article class="card">
-              <div class="thumb" style="--a:#1e1b4b;--b:#facc15">📈</div>
+              <div class="thumb"><img src="projects/complykit.jpg" alt="CA Compliance Tool home page" loading="lazy" draggable="false" /></div>
               <div class="card-body">
-                <div class="row"><h3>SmartWealth</h3><span class="year">ML · Fintech</span></div>
-                <p>AI-powered investment advisor. ML recommendation engine with live yFinance market data in under 2 s, covering 10+ asset categories.</p>
-                <ul class="tags"><li>Python</li><li>SQLite</li><li>REST APIs</li><li>Streamlit</li><li>yFinance</li></ul>
-                <div class="links"><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+                <div class="row"><h3>CA Compliance Tool</h3><span class="year">Web · Gen AI</span></div>
+                <p>Compliance tracker for Indian CAs: calculates each company's filing due dates and extracts details from MCA PDFs with the Claude API and Zod schemas. 50+ test files.</p>
+                <ul class="tags"><li>Next.js</li><li>React</li><li>Claude API</li><li>Zod</li><li>Clerk</li></ul>
+                <div class="links"><a href="https://cacompliancetool.com" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/Hasini885/complykit" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#1e1b4b;--b:#a78bfa">🃏</div>
+              <div class="card-body">
+                <div class="row"><h3>Study Assistant</h3><span class="year">Gen AI · Web</span></div>
+                <p>Paste your notes, get AI flashcards and a quiz that re-tests what you got wrong. A tolerant JSON parser (4 fallback strategies) with self-repair, covered by 36 unit tests.</p>
+                <ul class="tags"><li>React</li><li>Express</li><li>Groq</li><li>Vercel</li></ul>
+                <div class="links"><a href="https://study-assistant-indol-pi.vercel.app" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/Hasini885/study-assistant" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#052e16;--b:#86efac">🌳</div>
+              <div class="card-body">
+                <div class="row"><h3>Forest Watch</h3><span class="year">ML · Geospatial</span></div>
+                <p>Maps forest cover from Sentinel-2 imagery with a cross-validated U-Net ensemble and flags new clearings across years, validated against Hansen Global Forest Change.</p>
+                <ul class="tags"><li>PyTorch</li><li>U-Net</li><li>Sentinel-2</li><li>Next.js</li><li>Leaflet</li></ul>
+                <div class="links"><a href="https://forest-watch-six.vercel.app" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/Hasini885/forest-watch" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#422006;--b:#facc15">📈</div>
+              <div class="card-body">
+                <div class="row"><h3>SmartWealth</h3><span class="year">AI · Fintech</span></div>
+                <p>Personalised investment strategy from age, income, risk appetite and goal, tempered by live news sentiment. Explainable: every recommendation shows the rules behind it.</p>
+                <ul class="tags"><li>Python</li><li>Streamlit</li><li>SQLite</li><li>yFinance</li></ul>
+                <div class="links"><a href="https://github.com/Hasini885/AI-Investment-Recommendation-System" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#3b0764;--b:#f0abfc">📡</div>
               <div class="card-body">
-                <div class="row"><h3>ConvLSTM Traffic Forecasting</h3><span class="year">Deep Learning</span></div>
-                <p>Forecasts mobile internet traffic over a 100×100 grid of Milan from 62 days of Telecom Italia data. ConvLSTM built from scratch: ~10% lower RMSE than the best baseline.</p>
+                <div class="row"><h3>ConvLSTM Milano</h3><span class="year">Deep Learning</span></div>
+                <p>Forecasts mobile traffic on the 100×100 Milan grid with a ConvLSTM built from scratch in PyTorch. RMSE 8.47, which is 9.8% lower than the persistence baseline.</p>
                 <ul class="tags"><li>PyTorch</li><li>NumPy</li><li>scikit-learn</li><li>Kaggle GPU</li></ul>
-                <div class="links"><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+                <div class="links"><a href="https://github.com/Hasini885/convlstm-milano-traffic-prediction" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
             </article>
             <article class="card">
-              <div class="thumb" style="--a:#7c2d12;--b:#fdba74">🧩</div>
+              <div class="thumb" style="--a:#7c2d12;--b:#fdba74">🏠</div>
               <div class="card-body">
-                <div class="row"><h3>AI Governance Backend</h3><span class="year">Internship</span></div>
-                <p>Edunet Foundation internship: backend features and REST APIs for an AI governance platform. Query optimisation cut response times by 25–30%.</p>
-                <ul class="tags"><li>Python</li><li>Node.js</li><li>Express</li><li>SQL</li><li>Agile Scrum</li></ul>
+                <div class="row"><h3>Property Manager</h3><span class="year">Full-Stack Web</span></div>
+                <p>Rental platform for owners and tenants: properties, leases with document uploads, payment verification and JWT auth with role-based access.</p>
+                <ul class="tags"><li>React</li><li>Express</li><li>MongoDB</li><li>JWT</li></ul>
+                <div class="links"><a href="https://github.com/Hasini885/Real-estate-property-management" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#4a044e;--b:#fda4af">🩺</div>
+              <div class="card-body">
+                <div class="row"><h3>Mammogram CAD</h3><span class="year">Computer Vision</span></div>
+                <p>Classifies CBIS-DDSM mammograms as benign or malignant from handcrafted image features (shape, intensity, GLCM texture) and a Random Forest. No deep learning.</p>
+                <ul class="tags"><li>Python</li><li>OpenCV</li><li>scikit-learn</li><li>DICOM</li></ul>
+                <div class="links"><a href="https://github.com/Hasini885/Mammogram-cancer-detection" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
             </article>
           </div>
@@ -150,36 +187,70 @@
         <p class="hint">Drag to rotate</p>
       </section>
 
+      <!-- ===== SKILLS: four big categories ===== -->
+      <section id="skills" class="section">
+        <h2 class="label reveal"><span>🛠️</span>What I Do</h2>
+        <ol class="skill-list">
+          <li class="skill-row reveal">
+            <span class="skill-num">01</span>
+            <div>
+              <h3 class="skill-name">Generative <em>AI</em></h3>
+              <ul class="tags big"><li>Groq · Llama</li><li>Claude</li><li>Gemini</li><li>Prompt Engineering</li><li>Structured JSON Output</li><li>Tool Calling</li><li>AI Agents</li><li>LangChain</li><li>RAG</li><li>LLM Evals · DeepEval</li></ul>
+              <p class="skill-used">Used in Sentinel, CA Compliance Tool, Study Assistant</p>
+            </div>
+          </li>
+          <li class="skill-row reveal">
+            <span class="skill-num">02</span>
+            <div>
+              <h3 class="skill-name">Web <em>Development</em></h3>
+              <ul class="tags big"><li>React</li><li>Next.js</li><li>TypeScript</li><li>JavaScript</li><li>Node.js</li><li>Express</li><li>Zod</li><li>Clerk</li><li>Playwright</li><li>Vercel</li></ul>
+              <p class="skill-used">Used in CA Compliance Tool, Study Assistant, Property Manager, Forest Watch</p>
+            </div>
+          </li>
+          <li class="skill-row reveal">
+            <span class="skill-num">03</span>
+            <div>
+              <h3 class="skill-name">Backend <em>&amp; Data</em></h3>
+              <ul class="tags big"><li>Python</li><li>FastAPI</li><li>Flask</li><li>REST APIs</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>Alembic</li><li>Redis</li><li>MongoDB</li><li>Docker</li><li>JWT · bcrypt</li><li>pytest</li></ul>
+              <p class="skill-used">Used in Sentinel, SmartWealth, Property Manager and my Edunet internship</p>
+            </div>
+          </li>
+          <li class="skill-row reveal">
+            <span class="skill-num">04</span>
+            <div>
+              <h3 class="skill-name">Machine <em>Learning</em></h3>
+              <ul class="tags big"><li>PyTorch</li><li>U-Net</li><li>ConvLSTM</li><li>scikit-learn</li><li>OpenCV</li><li>NumPy</li><li>Pandas</li><li>Computer Vision</li></ul>
+              <p class="skill-used">Used in Forest Watch, ConvLSTM Milano, Mammogram CAD</p>
+            </div>
+          </li>
+        </ol>
+        <p class="skill-extra reveal">Also: Java (Oracle certified), C++, SQL · Git, Azure, Claude Code · DSA, OOP, DBMS, OS, Computer Networks</p>
+      </section>
+
       <!-- ===== ABOUT ===== -->
       <section id="about" class="section">
         <h2 class="label reveal"><span>🧑🏻‍💻</span>About Me</h2>
         <div class="about reveal">
-          <p class="lead">I build <em>AI that's actually useful</em>: LLM pipelines that return reliable, structured output, on backends fast enough to trust.</p>
-          <p>I'm a final-year B.Tech CSE student at SRM University–AP. I work across Generative AI, RAG pipelines, prompt engineering, AI agents and tool calling, and backend engineering with FastAPI, SQL and Docker. I also spent a semester abroad at INTI International University in Malaysia.</p>
+          <p class="lead">I build <em>AI that's actually useful</em>: LLM features that return reliable, validated output, on backends fast enough to trust.</p>
+          <p>I'm a final-year B.Tech CSE student at SRM University–AP. I build LLM-powered web apps and APIs in Python (FastAPI) and TypeScript (React, Next.js): hosted model APIs, tool calling, validated structured JSON output and eval suites for model output. I build with AI coding tools and verify what they produce with tests. I also spent a semester abroad at INTI International University in Malaysia.</p>
           <div class="stats">
             <div><strong>8.57</strong><span>CGPA</span></div>
-            <div><strong>20+</strong><span>REST endpoints shipped</span></div>
-            <div><strong>30%</strong><span>faster API responses</span></div>
+            <div><strong>98.4%</strong><span>Class XII</span></div>
+            <div><strong>3</strong><span>live apps</span></div>
             <div><strong>2</strong><span>pro certifications</span></div>
           </div>
-        </div>
-        <div class="skills reveal">
-          <div><h4>GenAI / LLM</h4><ul class="tags"><li>LLMs</li><li>RAG</li><li>Prompt Engineering</li><li>LangChain</li><li>AI Agents</li><li>Tool Calling</li><li>MCP</li><li>ChromaDB</li><li>FAISS</li><li>Embeddings</li></ul></div>
-          <div><h4>Backend</h4><ul class="tags"><li>FastAPI</li><li>Flask</li><li>Node.js</li><li>Express</li><li>REST API Design</li><li>Microservices</li></ul></div>
-          <div><h4>Languages</h4><ul class="tags"><li>Python</li><li>Java</li><li>C++</li><li>C</li><li>JavaScript</li></ul></div>
-          <div><h4>Databases</h4><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>SQLite</li><li>MongoDB</li><li>Redis</li></ul></div>
-          <div><h4>ML / AI</h4><ul class="tags"><li>PyTorch</li><li>scikit-learn</li><li>NumPy</li><li>Pandas</li><li>OpenCV</li><li>NLP</li><li>Deep Learning</li></ul></div>
-          <div><h4>DevOps &amp; Cloud</h4><ul class="tags"><li>Docker</li><li>Kubernetes</li><li>Git</li><li>CI/CD</li><li>AWS</li><li>Azure</li><li>GCP</li><li>Vercel</li><li>Render</li></ul></div>
         </div>
 
         <h2 class="label reveal" style="margin-top:56px"><span>🧭</span>Journey</h2>
         <ol class="timeline">
           <li class="reveal"><span class="when">Jun – Aug 2025</span>
-            <div><h3>Software Engineering Intern · <em>Edunet Foundation</em></h3><p>Full-stack developer (virtual). Built REST APIs in Python and Node.js/Express for an AI governance platform in an Agile Scrum team, and optimised SQL queries to cut response time by 25–30%.</p></div></li>
+            <div><h3>Software Engineering Intern · <em>Edunet Foundation</em></h3><p>Full-stack developer (virtual). Built REST APIs in Python and Node.js/Express for an AI governance platform in an Agile Scrum team, and optimised SQL queries to cut API response time by 25–30%.</p></div></li>
           <li class="reveal"><span class="when">Feb – May 2025</span>
             <div><h3>Semester Abroad · <em>INTI International University</em></h3><p>Nilai, Malaysia.</p></div></li>
           <li class="reveal"><span class="when">2023 – 2027</span>
             <div><h3>B.Tech, Computer Science &amp; Engineering · <em>SRM University–AP</em></h3><p>Amaravati, Andhra Pradesh · CGPA 8.57 / 10</p></div></li>
+          <li class="reveal"><span class="when">2020 – 2023</span>
+            <div><h3>Class XII · <em>Pragati Mahila Academy</em></h3><p>98.4% (AP Board) · Class X at Sanskriti Vidya Mandir: 95.7%</p></div></li>
           <li class="reveal"><span class="when">Certifications</span>
             <div><h3>Oracle Certified Professional: <em>Java SE 17 Developer</em></h3><p>MongoDB Associate Developer</p></div></li>
         </ol>
@@ -188,7 +259,7 @@
       <!-- ===== CONTACT ===== -->
       <section id="contact" class="section contact reveal">
         <h2 class="label"><span>💡</span>Let's work together</h2>
-        <p class="big">Hiring for GenAI or backend roles? <em>My inbox is open.</em></p>
+        <p class="big">Hiring for GenAI or full-stack roles? <em>My inbox is open.</em></p>
         <a class="btn primary large" href="mailto:hasinisaimaram@gmail.com">hasinisaimaram@gmail.com</a>
       </section>
     </main>

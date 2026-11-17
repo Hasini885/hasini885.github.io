@@ -136,8 +136,7 @@ document.querySelectorAll("section[id]").forEach((s) => spy.observe(s));
 
   function layout() {
     const w = cards[0].offsetWidth;
-    const fit = stage.clientWidth * 0.42;              // keep side cards inside the panel
-    radius = Math.min(Math.max(w / 2 / Math.tan(Math.PI / n) + 40, w * 0.9), Math.max(fit, w * 0.75));
+    radius = Math.max(w / 2 / Math.tan(Math.PI / n) + 30, w * 0.9); // never let neighbours intersect
     // push the ring back by its radius so the front card renders at its real size
     ring.style.transform = `translateZ(${-radius}px) rotateX(-4deg)`;
     const h = Math.max(...cards.map((c) => c.offsetHeight));
