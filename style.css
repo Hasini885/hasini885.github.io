@@ -471,3 +471,5 @@ body.pop-open .ring .card { opacity: 0 !important; visibility: hidden; transitio
   transition: transform .3s, background .2s;
 }
 .theme-toggle:hover { transform: rotate(25deg); }
+/* on phones the middle polaroid sits a little higher so it clears the name */
+@media (max-width: 900px) { .polaroid.mid { --y: 24% !important; } }
