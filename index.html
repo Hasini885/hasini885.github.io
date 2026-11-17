@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maram Hasini Sai — GenAI &amp; Backend Engineer</title>
+  <meta name="description" content="Maram Hasini Sai, final-year CSE student at SRM University–AP building Generative AI and agentic AI applications with LLMs, Python and FastAPI." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Caveat:wght@500;700&family=Gochi+Hand&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="intro-on">
+  <!-- ===================== INTRO SPLASH ===================== -->
+  <div class="splash" id="splash" role="button" tabindex="0" aria-label="Enter site">
+    <div class="splash-inner">
+      <div class="splash-avatar">
+        <!-- uses the same avatar.png as the sidebar -->
+        <img src="avatar.png" alt="" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+        <span hidden>🧑🏻‍💻</span>
+      </div>
+      <h1 class="splash-name" data-text="MARAM HASINI SAI">MARAM HASINI SAI</h1>
+      <p class="splash-role">GEN AI ENGINEER</p>
+    </div>
+    <span class="splash-hint">scroll or click ↓</span>
+  </div>
+
+  <!-- ===================== LEFT SIDEBAR ===================== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="side-top">
+      <div class="avatar">
+        <!-- ✏️ drop a cartoon/illustrated avatar as avatar.png in this folder -->
+        <img src="avatar.png" alt="Maram Hasini Sai" onerror="this.hidden=true;this.nextElementSibling.hidden=false" />
+        <span hidden>🧑🏻‍💻</span>
+      </div>
+      <p class="intro">
+        Hey there! I'm Hasini, a final-year Computer Science student building
+        Generative AI and agentic AI applications with LLMs, Python and FastAPI.
+      </p>
+    </div>
+
+    <button class="collapse" id="collapse" aria-label="Hide sidebar">‹</button>
+
+    <div class="side-bottom">
+      <a class="hire" href="mailto:hasinisaimaram@gmail.com">HIRE ME <span class="ne">↗</span></a>
+      <ul class="folders">
+        <li><a href="#work">📁 Projects <span class="ne">↗</span></a></li>
+        <li><a href="resume.pdf" target="_blank" rel="noopener">📁 Résumé <span class="ne">↗</span></a></li>
+      </ul>
+      <ul class="socials">
+        <!-- ✏️ EDIT: replace with your real profile URLs -->
+        <li><a href="https://github.com/Hasini885" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:hasinisaimaram@gmail.com">Email</a></li>
+      </ul>
+      <p class="copy"><span id="year"></span> © Maram Hasini Sai</p>
+    </div>
+  </aside>
+
+  <!-- ===================== RIGHT PANEL ===================== -->
+  <div class="panel">
+    <nav class="topbar">
+      <a href="#work"><span>📁</span>Work</a>
+      <a href="#about"><span>🧑🏻‍💻</span>About Me</a>
+      <a href="#contact"><span>💡</span>Contact</a>
+    </nav>
+
+    <!-- ===== HERO: cutting-mat desk ===== -->
+    <section class="mat" id="top">
+      <!-- ✏️ put your own photos in a "photos" folder as 1.jpg … 4.jpg (they fall back to colour blocks) -->
+      <figure class="polaroid" style="--x:9%;--y:4%;--r:-4deg;--ph:url(photos/1.jpg);--fb:linear-gradient(135deg,#d6c7b0,#8a7a66)">
+        <div class="photo"></div><figcaption>that's me :)</figcaption>
+      </figure>
+      <figure class="polaroid" style="--x:73%;--y:6%;--r:0deg;--ph:url(photos/2.jpg);--fb:linear-gradient(135deg,#9fb4c7,#3e5468)">
+        <div class="photo"></div><figcaption>malaysia '25</figcaption>
+      </figure>
+      <figure class="polaroid wide" style="--x:12%;--y:63%;--r:1deg;--ph:url(photos/3.jpg);--fb:linear-gradient(135deg,#e2b48a,#7d4b2a)">
+        <div class="photo"></div><figcaption>SRM AP</figcaption>
+      </figure>
+      <figure class="polaroid" style="--x:70%;--y:62%;--r:2deg;--ph:url(photos/4.jpg);--fb:linear-gradient(135deg,#b9d3b0,#4c6b45)">
+        <div class="photo"></div><figcaption>my setup</figcaption>
+      </figure>
+
+      <span class="pin" style="--x:92%;--y:49%"></span>
+      <span class="pin" style="--x:95.5%;--y:52%"></span>
+
+      <div class="mat-center">
+        <h1>Maram Hasini Sai</h1>
+        <div class="doodles">
+          <a href="#work" class="doodle">projects
+            <svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M30 12 C 80 2, 170 4, 192 26 C 205 46, 150 66, 90 64 C 30 62, 4 50, 8 32 C 12 16, 60 8, 120 9" /></svg>
+          </a>
+          <a href="#about" class="doodle">about me
+            <svg viewBox="0 0 200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M40 10 C 100 0, 185 8, 194 30 C 200 52, 140 66, 86 63 C 28 60, 2 46, 10 28 C 18 14, 70 6, 130 10" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main>
+      <!-- ===== WORK: drag-to-rotate carousel ===== -->
+      <section id="work" class="section">
+        <h2 class="label reveal"><span>📁</span>Selected Projects</h2>
+        <div class="stage reveal" id="stage" tabindex="0" aria-roledescription="carousel" aria-label="Projects. Drag or use arrow keys to rotate.">
+          <div class="ring" id="ring">
+            <!-- ✏️ replace each "#" link with the project's GitHub repo -->
+            <article class="card">
+              <div class="thumb" style="--a:#0f2f2c;--b:#5fc4b8">🛡️</div>
+              <div class="card-body">
+                <div class="row"><h3>Sentinel</h3><span class="year">GenAI · Agents</span></div>
+                <p>AI agent governance &amp; ROI platform. Llama 3.3 70B (via Groq) risk-scores agent actions and reasons over policy in real time across 20+ REST endpoints.</p>
+                <ul class="tags"><li>Python</li><li>FastAPI</li><li>Groq · Llama 3.3</li><li>PostgreSQL</li><li>Redis Streams</li><li>Docker</li></ul>
+                <div class="links"><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#1e1b4b;--b:#facc15">📈</div>
+              <div class="card-body">
+                <div class="row"><h3>SmartWealth</h3><span class="year">ML · Fintech</span></div>
+                <p>AI-powered investment advisor. ML recommendation engine with live yFinance market data in under 2 s, covering 10+ asset categories.</p>
+                <ul class="tags"><li>Python</li><li>SQLite</li><li>REST APIs</li><li>Streamlit</li><li>yFinance</li></ul>
+                <div class="links"><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#3b0764;--b:#f0abfc">📡</div>
+              <div class="card-body">
+                <div class="row"><h3>ConvLSTM Traffic Forecasting</h3><span class="year">Deep Learning</span></div>
+                <p>Forecasts mobile internet traffic over a 100×100 grid of Milan from 62 days of Telecom Italia data. ConvLSTM built from scratch: ~10% lower RMSE than the best baseline.</p>
+                <ul class="tags"><li>PyTorch</li><li>NumPy</li><li>scikit-learn</li><li>Kaggle GPU</li></ul>
+                <div class="links"><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+              </div>
+            </article>
+            <article class="card">
+              <div class="thumb" style="--a:#7c2d12;--b:#fdba74">🧩</div>
+              <div class="card-body">
+                <div class="row"><h3>AI Governance Backend</h3><span class="year">Internship</span></div>
+                <p>Edunet Foundation internship: backend features and REST APIs for an AI governance platform. Query optimisation cut response times by 25–30%.</p>
+                <ul class="tags"><li>Python</li><li>Node.js</li><li>Express</li><li>SQL</li><li>Agile Scrum</li></ul>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="ring-controls">
+          <button class="arrow" id="prev" aria-label="Previous project">←</button>
+          <div class="dots" id="dots"></div>
+          <button class="arrow" id="next" aria-label="Next project">→</button>
+        </div>
+        <p class="hint">Drag to rotate</p>
+      </section>
+
+      <!-- ===== ABOUT ===== -->
+      <section id="about" class="section">
+        <h2 class="label reveal"><span>🧑🏻‍💻</span>About Me</h2>
+        <div class="about reveal">
+          <p class="lead">I build <em>AI that's actually useful</em>: LLM pipelines that return reliable, structured output, on backends fast enough to trust.</p>
+          <p>I'm a final-year B.Tech CSE student at SRM University–AP. I work across Generative AI, RAG pipelines, prompt engineering, AI agents and tool calling, and backend engineering with FastAPI, SQL and Docker. I also spent a semester abroad at INTI International University in Malaysia.</p>
+          <div class="stats">
+            <div><strong>8.57</strong><span>CGPA</span></div>
+            <div><strong>20+</strong><span>REST endpoints shipped</span></div>
+            <div><strong>30%</strong><span>faster API responses</span></div>
+            <div><strong>2</strong><span>pro certifications</span></div>
+          </div>
+        </div>
+        <div class="skills reveal">
+          <div><h4>GenAI / LLM</h4><ul class="tags"><li>LLMs</li><li>RAG</li><li>Prompt Engineering</li><li>LangChain</li><li>AI Agents</li><li>Tool Calling</li><li>MCP</li><li>ChromaDB</li><li>FAISS</li><li>Embeddings</li></ul></div>
+          <div><h4>Backend</h4><ul class="tags"><li>FastAPI</li><li>Flask</li><li>Node.js</li><li>Express</li><li>REST API Design</li><li>Microservices</li></ul></div>
+          <div><h4>Languages</h4><ul class="tags"><li>Python</li><li>Java</li><li>C++</li><li>C</li><li>JavaScript</li></ul></div>
+          <div><h4>Databases</h4><ul class="tags"><li>PostgreSQL</li><li>MySQL</li><li>SQLite</li><li>MongoDB</li><li>Redis</li></ul></div>
+          <div><h4>ML / AI</h4><ul class="tags"><li>PyTorch</li><li>scikit-learn</li><li>NumPy</li><li>Pandas</li><li>OpenCV</li><li>NLP</li><li>Deep Learning</li></ul></div>
+          <div><h4>DevOps &amp; Cloud</h4><ul class="tags"><li>Docker</li><li>Kubernetes</li><li>Git</li><li>CI/CD</li><li>AWS</li><li>Azure</li><li>GCP</li><li>Vercel</li><li>Render</li></ul></div>
+        </div>
+
+        <h2 class="label reveal" style="margin-top:56px"><span>🧭</span>Journey</h2>
+        <ol class="timeline">
+          <li class="reveal"><span class="when">Jun – Aug 2025</span>
+            <div><h3>Software Engineering Intern · <em>Edunet Foundation</em></h3><p>Full-stack developer (virtual). Built REST APIs in Python and Node.js/Express for an AI governance platform in an Agile Scrum team, and optimised SQL queries to cut response time by 25–30%.</p></div></li>
+          <li class="reveal"><span class="when">Feb – May 2025</span>
+            <div><h3>Semester Abroad · <em>INTI International University</em></h3><p>Nilai, Malaysia.</p></div></li>
+          <li class="reveal"><span class="when">2023 – 2027</span>
+            <div><h3>B.Tech, Computer Science &amp; Engineering · <em>SRM University–AP</em></h3><p>Amaravati, Andhra Pradesh · CGPA 8.57 / 10</p></div></li>
+          <li class="reveal"><span class="when">Certifications</span>
+            <div><h3>Oracle Certified Professional: <em>Java SE 17 Developer</em></h3><p>MongoDB Associate Developer</p></div></li>
+        </ol>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section id="contact" class="section contact reveal">
+        <h2 class="label"><span>💡</span>Let's work together</h2>
+        <p class="big">Hiring for GenAI or backend roles? <em>My inbox is open.</em></p>
+        <a class="btn primary large" href="mailto:hasinisaimaram@gmail.com">hasinisaimaram@gmail.com</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>All Rights Reserved © <span id="year2"></span> Maram Hasini Sai</span>
+      <span>Built from scratch with HTML, CSS &amp; JS</span>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
