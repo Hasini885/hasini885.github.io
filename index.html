@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Caveat:wght@500;700&family=Instrument+Serif&family=Gochi+Hand&family=Unbounded:wght@500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=202611172316" />
+  <link rel="stylesheet" href="style.css?v=202611172321" />
 </head>
 <body class="intro-on">
   <!-- ===================== INTRO SPLASH ===================== -->
@@ -113,6 +113,11 @@
                 <ul class="tags"><li>FastAPI</li><li>PostgreSQL</li><li>Redis</li><li>Groq</li><li>Next.js</li><li>DeepEval</li></ul>
                 <div class="links"><a href="https://github.com/Hasini885/Sentinel" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The problem</h4><p>AI agents call real tools (sending emails, moving money, deleting data) with nobody checking first, and teams can't tell which features burn tokens without delivering value.</p></section>
+                <section><h4>How I built it</h4><p>An interception layer catches every tool call <b>before</b> it runs. Llama 3.3 70B on Groq returns strict JSON (risk, reason, feature tag), validated by Pydantic. A policy engine then executes, blocks or holds the action for human approval.</p></section>
+                <section><h4>Results</h4><p>15+ FastAPI endpoints. PostgreSQL with SQLAlchemy and 7 Alembic migrations, where audit rows commit in the same transaction as the change. A DeepEval + pytest regression suite re-runs on every prompt change. Next.js dashboard with JWT sessions and Playwright tests.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb"><img src="projects/complykit.jpg" alt="CA Compliance Tool home page" loading="lazy" draggable="false" /></div>
@@ -122,6 +127,11 @@
                 <ul class="tags"><li>Next.js</li><li>React</li><li>Claude API</li><li>Zod</li><li>Clerk</li></ul>
                 <div class="links"><a href="https://cacompliancetool.com" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/Hasini885/complykit" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The problem</h4><p>Chartered accountants in India track Companies Act filing deadlines (AOC-4, MGT-7, DIR-3 KYC and more) for dozens of companies by hand, in spreadsheets.</p></section>
+                <section><h4>How I built it</h4><p>Due dates are calculated from each company's own incorporation, AGM and financial-year details. Company and director details are pulled from MCA PDFs with the Claude API and Zod-schema structured output, with in-browser OCR for scanned files.</p></section>
+                <section><h4>Results</h4><p>Live at cacompliancetool.com with Clerk sign-in. Built with Claude Code guided by CLAUDE.md / AGENTS.md, and verified by 50+ test files.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#1e1b4b;--b:#a78bfa">🃏</div>
@@ -131,6 +141,11 @@
                 <ul class="tags"><li>React</li><li>Express</li><li>Groq</li><li>Vercel</li></ul>
                 <div class="links"><a href="https://study-assistant-indol-pi.vercel.app" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/Hasini885/study-assistant" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The idea</h4><p>Paste your notes and get flashcards plus an adaptive quiz that keeps re-testing what you got wrong until you know it.</p></section>
+                <section><h4>How I built it</h4><p>Groq (Llama 3.3) generates the cards. Model output is often messy JSON, so I wrote a tolerant parser with 4 fallback strategies, shape repair and a self-repair retry.</p></section>
+                <section><h4>Results</h4><p>36 unit tests cover parsing and repair. The API key never reaches the browser: it lives in Vercel serverless functions with typed errors. Live on Vercel.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#052e16;--b:#86efac">🌳</div>
@@ -140,6 +155,11 @@
                 <ul class="tags"><li>PyTorch</li><li>U-Net</li><li>Sentinel-2</li><li>Next.js</li><li>Leaflet</li></ul>
                 <div class="links"><a href="https://forest-watch-six.vercel.app" target="_blank" rel="noopener">Live ↗</a><a href="https://github.com/Hasini885/forest-watch" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The problem</h4><p>Find where forest is being cleared, using free satellite imagery, and prove the result is right rather than just reporting a good-looking score.</p></section>
+                <section><h4>How I built it</h4><p>Cloud-masked Sentinel-2 yearly composites (with NDVI and NDMI) feed a U-Net trained with 4-fold spatial cross-validation. The fold ensemble maps forest each year, and multi-date change detection flags clearings with no later regrowth.</p></section>
+                <section><h4>Results</h4><p>Checked against the independent Hansen Global Forest Change dataset, plus unseen-year and unseen-region tests. Clearings are exported as GeoJSON and shown on an interactive Next.js + Leaflet map.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#422006;--b:#facc15">📈</div>
@@ -149,6 +169,11 @@
                 <ul class="tags"><li>Python</li><li>Streamlit</li><li>SQLite</li><li>yFinance</li></ul>
                 <div class="links"><a href="https://github.com/Hasini885/AI-Investment-Recommendation-System" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The idea</h4><p>Recommend a personalised investment strategy from age, monthly income, risk appetite and financial goal, and explain exactly why.</p></section>
+                <section><h4>How I built it</h4><p>A symbolic expert system scores risk capacity, applies hard caps and takes the lower of capacity and stated tolerance. Live news sentiment acts as a one-way defensive lever: bearish news makes it more conservative, never more aggressive.</p></section>
+                <section><h4>Results</h4><p>Every recommendation comes with the chain of rules that produced it, in plain English, in a Streamlit app with live market data from yFinance. An educational project, not investment advice.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#3b0764;--b:#f0abfc">📡</div>
@@ -158,6 +183,11 @@
                 <ul class="tags"><li>PyTorch</li><li>NumPy</li><li>scikit-learn</li><li>Kaggle GPU</li></ul>
                 <div class="links"><a href="https://github.com/Hasini885/convlstm-milano-traffic-prediction" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The problem</h4><p>Predict mobile traffic (SMS, calls, internet) 10 minutes ahead across Milan's 100×100 grid, using 62 days of Telecom Italia's open data.</p></section>
+                <section><h4>How I built it</h4><p>A preprocessing pipeline, then a spatio-temporal ConvLSTM written from scratch in PyTorch, with masked loss, early stopping, LR scheduling and checkpointing. Trained on a Kaggle Tesla T4 GPU.</p></section>
+                <section><h4>Results</h4><p>RMSE 8.47 and MAE 3.78 on the holiday test period: 9.8% lower RMSE and 12.8% lower MAE than the persistence baseline, across 1,334 test windows.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#7c2d12;--b:#fdba74">🏠</div>
@@ -167,6 +197,11 @@
                 <ul class="tags"><li>React</li><li>Express</li><li>MongoDB</li><li>JWT</li></ul>
                 <div class="links"><a href="https://github.com/Hasini885/Real-estate-property-management" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The idea</h4><p>One place for property owners and tenants to handle rentals, leases and payments, instead of scattered messages and paperwork.</p></section>
+                <section><h4>How I built it</h4><p>A React frontend with an Express + MongoDB backend. JWT authentication with role-based access, so owners and tenants each see what they should.</p></section>
+                <section><h4>Features</h4><p>Add and manage properties, assign tenants, create leases with document uploads, record and verify payments, and a dashboard for property and payment details.</p></section>
+              </template>
             </article>
             <article class="card">
               <div class="thumb" style="--a:#4a044e;--b:#fda4af">🩺</div>
@@ -176,6 +211,11 @@
                 <ul class="tags"><li>Python</li><li>OpenCV</li><li>scikit-learn</li><li>DICOM</li></ul>
                 <div class="links"><a href="https://github.com/Hasini885/Mammogram-cancer-detection" target="_blank" rel="noopener">Code ↗</a></div>
               </div>
+              <template class="details">
+                <section><h4>The problem</h4><p>Classify mammograms as benign or malignant, as a computer-aided diagnosis aid, without relying on a black-box deep network.</p></section>
+                <section><h4>How I built it</h4><p>From raw DICOM to verdict with classical image processing: region-of-interest extraction, then handcrafted shape, intensity and GLCM texture features fed to a Random Forest.</p></section>
+                <section><h4>Dataset</h4><p>CBIS-DDSM from The Cancer Imaging Archive: 3,103 mammograms (2,458 train, 645 test), mass and calcification cases, CC and MLO views.</p></section>
+              </template>
             </article>
           </div>
         </div>
@@ -184,7 +224,7 @@
           <div class="dots" id="dots"></div>
           <button class="arrow" id="next" aria-label="Next project">→</button>
         </div>
-        <p class="hint">Drag to rotate</p>
+        <p class="hint">Drag to rotate · tap a card for details</p>
       </section>
 
       <!-- ===== SKILLS: four big categories ===== -->
@@ -266,6 +306,6 @@
     </footer>
   </div>
 
-  <script src="script.js?v=202611172316"></script>
+  <script src="script.js?v=202611172321"></script>
 </body>
 </html>

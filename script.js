@@ -159,7 +159,7 @@ document.querySelectorAll("section[id]").forEach((s) => spy.observe(s));
   }
 
   function tick() {
-    if (!dragging) {
+    if (!dragging && !document.body.classList.contains("pop-open")) {
       if (target !== null) {
         angle += (target - angle) * 0.1;
         if (Math.abs(target - angle) < 0.02) { angle = target; target = null; }
@@ -218,4 +218,117 @@ document.querySelectorAll("section[id]").forEach((s) => spy.observe(s));
   window.addEventListener("resize", layout);
   document.fonts?.ready.then(layout);
   requestAnimationFrame(tick);
+})();
+
+// ===== Tap a project card -> three detail cards pop out of it =====
+(() => {
+  const stage = document.getElementById("stage");
+  if (!stage) return;
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const overlay = document.createElement("div");
+  overlay.className = "pop-overlay";
+  overlay.hidden = true;
+  overlay.setAttribute("role", "dialog");
+  overlay.setAttribute("aria-modal", "true");
+  overlay.innerHTML =
+    '<button class="pop-close" aria-label="Close details">×</button>' +
+    '<div class="pop-head"><span class="pop-cat"></span><h3></h3></div>' +
+    '<div class="pop-cards"></div>' +
+    '<p class="pop-hint">tap outside to close</p>';
+  document.body.appendChild(overlay);
+  const cardsEl = overlay.querySelector(".pop-cards");
+  let source = null, closing = false;
+
+  function open(card) {
+    const tpl = card.querySelector("template.details");
+    if (!tpl || !overlay.hidden) return;
+    source = card;
+    const cat = card.querySelector(".year");
+    overlay.querySelector(".pop-cat").textContent = cat ? cat.textContent : "";
+    overlay.querySelector(".pop-head h3").textContent = card.querySelector("h3").textContent;
+    cardsEl.innerHTML = "";
+    const secs = [...tpl.content.querySelectorAll("section")];
+    secs.forEach((sec, i) => {
+      const pop = document.createElement("article");
+      pop.className = "pop";
+      pop.innerHTML = '<span class="pop-num">0' + (i + 1) + "</span>" + sec.innerHTML;
+      if (i === secs.length - 1) {            // last card also gets the tech tags + links
+        const tags = card.querySelector(".tags");
+        if (tags) pop.appendChild(tags.cloneNode(true));
+        const links = card.querySelector(".links");
+        if (links) pop.appendChild(links.cloneNode(true));
+      }
+      cardsEl.appendChild(pop);
+    });
+
+    overlay.hidden = false;
+    overlay.scrollTop = 0;
+    document.body.classList.add("pop-open");
+    requestAnimationFrame(() => overlay.classList.add("show"));
+
+    // each card flies out of the tapped project card and lands with a little bounce
+    const src = card.getBoundingClientRect();
+    const sx = src.left + src.width / 2, sy = src.top + src.height / 2;
+    [...cardsEl.children].forEach((pop, i) => {
+      const rot = getComputedStyle(pop).getPropertyValue("--rot").trim() || "0deg";
+      pop.style.transform = "rotate(" + rot + ")";
+      if (reduce) return;
+      const r = pop.getBoundingClientRect();
+      const dx = sx - (r.left + r.width / 2), dy = sy - (r.top + r.height / 2);
+      pop.animate(
+        [
+          { transform: "translate(" + dx + "px," + dy + "px) scale(.2) rotate(0deg)", opacity: 0 },
+          { opacity: 1, offset: 0.35 },
+          { transform: "rotate(" + rot + ")", opacity: 1 },
+        ],
+        { duration: 700, delay: 120 + i * 110, easing: "cubic-bezier(.3,1.35,.5,1)", fill: "backwards" }
+      );
+    });
+    overlay.querySelector(".pop-close").focus({ preventScroll: true });
+  }
+
+  function finishClose() {
+    overlay.hidden = true;
+    cardsEl.innerHTML = "";
+    document.body.classList.remove("pop-open");
+    closing = false;
+    stage.focus({ preventScroll: true });
+  }
+
+  function close() {
+    if (overlay.hidden || closing) return;
+    closing = true;
+    overlay.classList.remove("show");
+    const pops = [...cardsEl.children];
+    if (reduce || !source) { setTimeout(finishClose, 300); return; }
+    const src = source.getBoundingClientRect();
+    const anims = pops.map((pop, i) => {
+      const r = pop.getBoundingClientRect();
+      const dx = src.left + src.width / 2 - (r.left + r.width / 2);
+      const dy = src.top + src.height / 2 - (r.top + r.height / 2);
+      return pop.animate(
+        [{ transform: pop.style.transform, opacity: 1 }, { transform: "translate(" + dx + "px," + dy + "px) scale(.2)", opacity: 0 }],
+        { duration: 360, delay: (pops.length - 1 - i) * 60, easing: "cubic-bezier(.6,0,.8,.4)", fill: "forwards" }
+      ).finished;
+    });
+    Promise.all(anims).then(finishClose, finishClose);
+  }
+
+  // tap/click the front card; links inside it still work, and drags are swallowed by the carousel
+  stage.addEventListener("click", (e) => {
+    if (e.target.closest("a")) return;
+    const card = e.target.closest(".card");
+    if (card && !card.inert) open(card);
+  });
+  stage.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      const front = [...stage.querySelectorAll(".ring .card")].find((c) => !c.inert);
+      if (front) { e.preventDefault(); open(front); }
+    }
+  });
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay || e.target.closest(".pop-close") || e.target.classList.contains("pop-hint")) close();
+  });
+  window.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 })();

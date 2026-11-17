@@ -374,3 +374,63 @@ em { font-family: var(--serif); font-style: normal; font-weight: 500; color: var
   font-family: "Instrument Serif", Georgia, serif; font-weight: 400;
   font-size: clamp(34px, 6.2cqw, 92px); letter-spacing: -.02em;
 }
+
+/* ===================== PROJECT DETAIL POP-OUT ===================== */
+.ring .card { cursor: pointer; }
+.stage.grabbing .ring .card { cursor: grabbing; }
+body.pop-open { overflow: hidden; }
+.pop-overlay {
+  position: fixed; inset: 0; z-index: 200;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px;
+  padding: 64px 24px 32px; overflow-y: auto;
+  background: rgba(10, 28, 26, .55); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  opacity: 0; transition: opacity .3s ease;
+}
+.pop-overlay.show { opacity: 1; }
+.pop-overlay[hidden] { display: none; }
+.pop-head { text-align: center; color: #fff; }
+.pop-cat { font-family: var(--hand); font-size: 24px; color: var(--highlight); }
+.pop-head h3 {
+  font-family: "Unbounded", var(--sans); font-weight: 600; letter-spacing: -.04em;
+  font-size: clamp(26px, 4vw, 52px); line-height: 1.05; margin-top: 2px;
+}
+.pop-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 320px)); gap: 22px; align-items: start; }
+.pop {
+  position: relative; background: #fdfdfb; color: var(--text);
+  border-radius: 18px; padding: 24px 22px 22px;
+  box-shadow: 0 2px 4px rgba(0,0,0,.12), 0 30px 60px -20px rgba(0,0,0,.55);
+  border-top: 6px solid var(--accent, var(--teal));
+  will-change: transform, opacity;
+}
+.pop:nth-child(1) { --accent: #5fc4b8; --rot: -3deg; }
+.pop:nth-child(2) { --accent: var(--highlight); --rot: 1deg; margin-top: 26px; }
+.pop:nth-child(3) { --accent: #f0a3c4; --rot: 3.5deg; }
+.pop-num {
+  position: absolute; top: -18px; right: 18px; width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--text); color: #fff;
+  font-family: "Unbounded", var(--sans); font-size: 13px; font-weight: 600;
+}
+.pop h4 { font-family: "Unbounded", var(--sans); font-weight: 600; font-size: 17px; letter-spacing: -.03em; margin-bottom: 10px; }
+.pop p { font-size: 15.5px; line-height: 1.55; color: #3a3a3a; }
+.pop p b { color: var(--teal); }
+.pop .tags { margin-top: 16px; }
+.pop .links { margin-top: 14px; }
+.pop-close {
+  position: fixed; top: 16px; right: 18px; z-index: 201;
+  width: 44px; height: 44px; border-radius: 50%; border: 0; cursor: pointer;
+  background: #fff; color: var(--text); font-size: 22px; line-height: 1;
+  box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: transform .2s;
+}
+.pop-close:hover { transform: rotate(90deg); }
+.pop-hint { font-family: var(--hand); font-size: 20px; color: rgba(255,255,255,.75); cursor: pointer; }
+@media (max-width: 900px) {
+  .pop-overlay { justify-content: flex-start; }
+  .pop-cards { grid-template-columns: minmax(0, 440px); gap: 26px; }
+  .pop:nth-child(2) { margin-top: 0; }
+  .pop:nth-child(1) { --rot: -1.5deg; }
+  .pop:nth-child(2) { --rot: 1deg; }
+  .pop:nth-child(3) { --rot: -1deg; }
+}
+/* while details are open the 3D ring hides (it "bursts" into the three cards) so it can't paint through them */
+.ring .card { transition: visibility 0s; }
+body.pop-open .ring .card { opacity: 0 !important; visibility: hidden; transition: opacity .25s, visibility 0s .25s; }
