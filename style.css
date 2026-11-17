@@ -11,7 +11,7 @@
   --top: 46px;
   --radius: 14px;
   --sans: "Inter Tight", "Inter", system-ui, sans-serif;
-  --serif: "Instrument Serif", Georgia, serif;
+  --serif: "Unbounded", "Inter Tight", system-ui, sans-serif;
   --hand: "Caveat", "Segoe Print", cursive;
 }
 
@@ -359,3 +359,12 @@ main { container-type: inline-size; }
 .skill-num { padding-top: .9em; }
 /* tag chips: normal letter spacing so they don't look cramped */
 .tags li { letter-spacing: 0; }
+
+/* ===== One type style: Unbounded replaces the old serif everywhere ===== */
+em { font-family: var(--serif); font-style: normal; font-weight: 500; color: var(--teal); letter-spacing: -.03em; font-size: .92em; }
+.card p em { font-family: inherit; font-size: inherit; font-weight: 600; letter-spacing: inherit; }
+.mat h1 { font-weight: 600; font-size: clamp(26px, 4.6cqw, 72px); letter-spacing: -.05em; }
+.stats strong { font-weight: 600; font-size: 30px; letter-spacing: -.04em; }
+.about .lead em, .big em { font-size: .9em; }
+.timeline h3 em { font-size: .95em; }
+.skill-name em { font-size: 1em; letter-spacing: inherit; }
