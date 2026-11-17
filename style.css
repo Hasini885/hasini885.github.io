@@ -434,3 +434,40 @@ body.pop-open { overflow: hidden; }
 /* while details are open the 3D ring hides (it "bursts" into the three cards) so it can't paint through them */
 .ring .card { transition: visibility 0s; }
 body.pop-open .ring .card { opacity: 0 !important; visibility: hidden; transition: opacity .25s, visibility 0s .25s; }
+
+/* ===================== DARK MODE (default) + light option ===================== */
+:root {
+  --bg: #0d0f0e;
+  --surface: #161918;
+  --text: #ecebe7;
+  --muted: #9b9e9a;
+  --line: #262a28;
+  --edge: #2e3331;
+  --teal: #6fd0c3;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #f6f6f4;
+  --text: #090909;
+  --muted: #7a7a7a;
+  --line: #e6e6e3;
+  --edge: #1a1a1a;
+  --teal: #1b5a54;
+  color-scheme: light;
+}
+.sidebar { border-right-color: var(--edge); }
+@media (max-width: 900px) { .sidebar { border-bottom-color: var(--edge); } }
+.ring .card { box-shadow: 0 30px 60px -30px rgba(0,0,0,.6); }
+
+/* the pop-out detail cards stay light paper cards in both themes */
+.pop { --bg: #ffffff; --surface: #f6f6f4; --text: #090909; --line: #e6e6e3; --teal: #1b5a54; color: var(--text); }
+
+/* theme switch in the top bar */
+.theme-toggle {
+  width: 32px; height: 32px; border-radius: 50%; cursor: pointer; flex: none;
+  border: 1px solid var(--line); background: var(--surface); color: var(--text);
+  font-size: 15px; line-height: 1; display: grid; place-items: center;
+  transition: transform .3s, background .2s;
+}
+.theme-toggle:hover { transform: rotate(25deg); }

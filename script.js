@@ -332,3 +332,24 @@ document.querySelectorAll("section[id]").forEach((s) => spy.observe(s));
   });
   window.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
 })();
+
+// ===== Theme toggle (dark is the default) =====
+(() => {
+  const btn = document.getElementById("themeToggle");
+  if (!btn) return;
+  const root = document.documentElement;
+  const sync = () => {
+    const light = root.dataset.theme === "light";
+    btn.textContent = light ? "☾" : "☀";
+    const label = light ? "Switch to dark mode" : "Switch to light mode";
+    btn.setAttribute("aria-label", label);
+    btn.title = label;
+  };
+  btn.addEventListener("click", () => {
+    if (root.dataset.theme === "light") delete root.dataset.theme;
+    else root.dataset.theme = "light";
+    try { localStorage.setItem("theme", root.dataset.theme === "light" ? "light" : "dark"); } catch (e) {}
+    sync();
+  });
+  sync();
+})();
